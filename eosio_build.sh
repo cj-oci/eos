@@ -155,12 +155,12 @@
 
 # 	export EOS_BUILD_TYPE=[Debug|Release|RelWithDebInfo|MinSizeRel|CodeCoverage] to enable
 	CMAKE_BUILD_TYPE=Release
-        ENABLE_CODE_COVERAGE=false
+        export ENABLE_CODE_COVERAGE=false
         CODE_COVERAGE_OPTS=
 	if [ ! -z $EOS_BUILD_TYPE ]; then
             if [[ $EOS_BUILD_TYPE == "CodeCoverage" ]]; then
                 ENABLE_CODE_COVERAGE=true
-                CMAKE_BUILD_TYPE=Debug
+                EOS_BUILD_TYPE=Debug
             fi
 
 	    CMAKE_BUILD_TYPE=$EOS_BUILD_TYPE
